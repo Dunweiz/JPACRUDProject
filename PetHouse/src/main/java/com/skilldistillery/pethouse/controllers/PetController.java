@@ -29,4 +29,6 @@ public class PetController {
 		model.addAttribute("pet", pet);
 		return "WEB-INF/pet/show.jsp";
 	}
+//	@RequestMapping(path="create.do")
+//	public 
 }
