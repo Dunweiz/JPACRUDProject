@@ -11,16 +11,16 @@ public class PetHouseDAOTest {
 		
 		PetHouse pet = new PetHouse();
 		
-//		pet.setAge(6);
-//		pet.setName("sprinkles");
-//		pet.setType("fish");
-//		System.out.println("Before db Stuff: " + pet);
-//		System.out.println(dao.create(pet));
+		pet.setAge(6);
+		pet.setName("sprinkles");
+		pet.setType("fish");
+		System.out.println("Before db Stuff: " + pet);
+		System.out.println(dao.create(pet));
 		
-		PetHouse newPet = new PetHouse();
-		newPet.setName("Spots");
-		newPet.setAge(5);
-		System.out.println(dao.update(12, newPet));
+//		PetHouse newPet = new PetHouse();
+//		newPet.setName("Spots");
+//		newPet.setAge(5);
+//		System.out.println(dao.update(12, newPet));
 		
 //		dao.destroy(11);
 	}

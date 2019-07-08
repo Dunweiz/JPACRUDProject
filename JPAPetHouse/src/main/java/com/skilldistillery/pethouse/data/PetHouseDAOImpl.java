@@ -66,8 +66,9 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	public List<PetHouse> getAllPets() {
 		EntityManager em = emf.createEntityManager();
 		
-	String query = "SELECT p FROM PetHouse p";
-	List<PetHouse> pets = em.createQuery(query, PetHouse.class).getResultList();
-	return pets;
+		String query = "SELECT pet FROM PetHouse pet";
+		List<PetHouse> pets = em.createQuery(query, PetHouse.class).getResultList();
+		em.close();
+		return pets;
 	}
 }

@@ -13,8 +13,8 @@
 			value="Show Pets" />
 	</form>
 	<hr>
-		<c:forEach var="p" items="${pets}">
-			<li><a href="getPet.do?fid=${p.id}">${p.type}</a></li>
+		<c:forEach var="p" items="${petHouse}">
+			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type}</a></li>
 		</c:forEach>
 </body>
 </html>

@@ -3,24 +3,19 @@ package com.skilldistillery.pethouse.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.pethouse.entities.PetHouse;
 
-@Component
 @Service
 @Transactional
 public class PetHouseDAOImpl implements PetHouseDAO {
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PetHouse");
 
 	@PersistenceContext
-	private EntityManager em = emf.createEntityManager();
+	private EntityManager em;
 
 	// Create a new pet
 	@Override
