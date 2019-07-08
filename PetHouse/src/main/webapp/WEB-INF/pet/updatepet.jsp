@@ -10,6 +10,6 @@
 <body>
 
 
-   <a href="index.html">Go Home</a>
+   <a href="index.jsp">Go Home</a>
 </body>
 </html>

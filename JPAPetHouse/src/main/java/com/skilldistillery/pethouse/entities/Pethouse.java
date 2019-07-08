@@ -7,7 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-public class PetHouse {
+@Table(name="pethouse")
+public class Pethouse {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
 	private int id;
@@ -63,7 +64,7 @@ public class PetHouse {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PetHouse other = (PetHouse) obj;
+		Pethouse other = (Pethouse) obj;
 		if (age != other.age)
 			return false;
 		if (id != other.id)

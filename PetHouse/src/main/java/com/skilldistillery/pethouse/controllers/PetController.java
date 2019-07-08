@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.pethouse.data.PetHouseDAO;
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
 @Controller
 public class PetController {
@@ -20,21 +20,21 @@ public class PetController {
 	
 	@RequestMapping(path = "/")
 	public String index(Model model) {
-		List<PetHouse> pets = dao.getAllPets();
+		List<Pethouse> pets = dao.getAllPets();
 		model.addAttribute("pets", pets);
 		return "WEB-INF/index.jsp";
 	}
 	
 	@RequestMapping(path="getPet.do")
 	public String showPets(@RequestParam("pid") Integer pid, Model model) {
-		PetHouse pet = dao.findById(pid);
+		Pethouse pet = dao.findById(pid);
 		model.addAttribute("pet", pet);
 		return "WEB-INF/pet/show.jsp";
 	}
 	
 	@RequestMapping(path="create.do", method = RequestMethod.POST)
-	public String createPet(@RequestParam("PID") PetHouse pet, Model model) {
-		PetHouse newPet = dao.create(pet);
+	public String createPet(@RequestParam("PID") Pethouse pet, Model model) {
+		Pethouse newPet = dao.create(pet);
 		model.addAttribute("pet", newPet);
 		return "WEB-INF/createnewpet.jsp";
 	}
@@ -48,14 +48,14 @@ public class PetController {
 	
 	@RequestMapping(path="updatePage.do", method = RequestMethod.POST)
 	public String updatePage(@RequestParam("PID") int pId, Model model) {
-		PetHouse pet = dao.findById(pId);
+		Pethouse pet = dao.findById(pId);
 		model.addAttribute("pet", pet);
 		return "WEB-INF/pet/updatepet.jsp";
 	}
 	
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
-	public String updatePet(@RequestParam("PID")int pID, PetHouse pet, Model model) {
-		PetHouse newPet = dao.update(pID, pet);
+	public String updatePet(@RequestParam("PID")int pID, Pethouse pet, Model model) {
+		Pethouse newPet = dao.update(pID, pet);
 		model.addAttribute("pet", newPet);
 		return"WEB-INF/pet/update.jsp";
 	}

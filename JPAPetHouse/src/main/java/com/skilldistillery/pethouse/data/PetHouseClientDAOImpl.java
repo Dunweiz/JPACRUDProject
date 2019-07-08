@@ -6,15 +6,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
-public class PetHouseDAOImpl implements PetHouseDAO {
+public class PetHouseClientDAOImpl {
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PetHouse");
 
 	
 	//Create a new pet
-	@Override
-	public PetHouse create(PetHouse pet) {
+	public Pethouse create(Pethouse pet) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(pet);
@@ -24,11 +23,10 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		return pet;
 	}
 	//Update an existing pet
-	@Override
-	public PetHouse update(int id, PetHouse pet) {
+	public Pethouse update(int id, Pethouse pet) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		PetHouse managed = em.find(PetHouse.class, id);
+		Pethouse managed = em.find(Pethouse.class, id);
 		managed.setName(pet.getName());
 		managed.setAge(pet.getAge());
 		managed.setType(pet.getType());
@@ -38,10 +36,9 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		return managed;
 	}
 	//Delete an existing pet
-	@Override
 	public boolean destroy(int id) {
 		EntityManager em = emf.createEntityManager();
-		PetHouse pet = em.find(PetHouse.class, id);
+		Pethouse pet = em.find(Pethouse.class, id);
 		em.getTransaction().begin();
 
 		em.remove(pet);
@@ -52,22 +49,20 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 
 	}
 	// Get all the pets with a certain type
-	@Override
-	public List<PetHouse> getPetByType(String type) {
+	public List<Pethouse> getPetByType(String type) {
 		EntityManager em = emf.createEntityManager();
 		String query = "SELECT p FROM PetHouse p WHERE p.type like :type";
-		List<PetHouse> petType = em.createQuery(query, PetHouse.class).setParameter("type", type).getResultList();
+		List<Pethouse> petType = em.createQuery(query, Pethouse.class).setParameter("type", type).getResultList();
 
 		em.close();
 		return petType;
 	}
 	// Get the complete list of pets
-	@Override
-	public List<PetHouse> getAllPets() {
+	public List<Pethouse> getAllPets() {
 		EntityManager em = emf.createEntityManager();
 		
 		String query = "SELECT pet FROM PetHouse pet";
-		List<PetHouse> pets = em.createQuery(query, PetHouse.class).getResultList();
+		List<Pethouse> pets = em.createQuery(query, Pethouse.class).getResultList();
 		em.close();
 		return pets;
 	}

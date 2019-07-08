@@ -15,6 +15,6 @@
 		<c:otherwise>Pet Cannot Be Deleted</c:otherwise>
 	</c:choose>
 	<br>
-	 <a href="index.html">Go Home</a>
+	 <a href="index.jsp">Go Home</a>
 </body>
 </html>

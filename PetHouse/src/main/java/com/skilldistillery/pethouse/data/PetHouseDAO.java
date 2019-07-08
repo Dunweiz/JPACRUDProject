@@ -2,18 +2,18 @@ package com.skilldistillery.pethouse.data;
 
 import java.util.List;
 
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
 public interface PetHouseDAO {
-	PetHouse update(int id, PetHouse pet);
+	Pethouse update(int id, Pethouse pet);
 
-	PetHouse create(PetHouse pet);
+	Pethouse create(Pethouse pet);
 
 	boolean destroy(int id);
 
-	List<PetHouse> getPetByType(String type);
+	List<Pethouse> getPetByType(String type);
 
-	List<PetHouse> getAllPets();
+	List<Pethouse> getAllPets();
 
-	PetHouse findById(int id);
+	Pethouse findById(int id);
 }

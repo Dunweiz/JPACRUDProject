@@ -1,15 +1,14 @@
 package com.skilldistillery.pethouse.client;
 
-import com.skilldistillery.pethouse.data.PetHouseDAO;
-import com.skilldistillery.pethouse.data.PetHouseDAOImpl;
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.data.PetHouseClientDAOImpl;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
 public class PetHouseDAOTest {
 
 	public static void main(String[] args) {
-		PetHouseDAO dao = new PetHouseDAOImpl();
+		PetHouseClientDAOImpl dao = new PetHouseClientDAOImpl();
 		
-		PetHouse pet = new PetHouse();
+		Pethouse pet = new Pethouse();
 		
 		pet.setAge(6);
 		pet.setName("sprinkles");

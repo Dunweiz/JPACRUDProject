@@ -24,6 +24,6 @@
 			value="${petHouse.age}"> <input type="hidden" name="id"
 			value=${petHouse.id}> <input type="submit" value="Update">
 	</form>
-	<a href="index.html">Go Home</a>
+	<a href="index.jsp">Go Home</a>
 </body>
 </html>

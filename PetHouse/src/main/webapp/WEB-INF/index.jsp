@@ -1,19 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home Page</title>
 </head>
-<body>
+<body><h1>Pet House</h1>
 <form action="getPet.do" method="GET">
 		Pet ID: <input type="text" name="pid" /> <input type="submit"
 			value="Show Pets" />
 	</form>
 	<hr>
 		<c:forEach var="p" items="${pets}">
-			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type}</a></li>
+			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type})</a></li>
 		</c:forEach>
+	<hr>
+	<form>
+	
+	</form>	
 </body>
 </html>

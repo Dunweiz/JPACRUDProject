@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
 @Service
 @Transactional
@@ -19,7 +19,7 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 
 	// Create a new pet
 	@Override
-	public PetHouse create(PetHouse pet) {
+	public Pethouse create(Pethouse pet) {
 		em.getTransaction().begin();
 		em.persist(pet);
 		em.flush();
@@ -30,9 +30,9 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 
 	// Update an existing pet
 	@Override
-	public PetHouse update(int id, PetHouse pet) {
+	public Pethouse update(int id, Pethouse pet) {
 		em.getTransaction().begin();
-		PetHouse managed = em.find(PetHouse.class, id);
+		Pethouse managed = em.find(Pethouse.class, id);
 		managed.setName(pet.getName());
 		managed.setAge(pet.getAge());
 		managed.setType(pet.getType());
@@ -45,7 +45,7 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	// Delete an existing pet
 	@Override
 	public boolean destroy(int id) {
-		PetHouse pet = em.find(PetHouse.class, id);
+		Pethouse pet = em.find(Pethouse.class, id);
 		em.getTransaction().begin();
 
 		em.remove(pet);
@@ -58,9 +58,9 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 
 	// Get all the pets with a certain type
 	@Override
-	public List<PetHouse> getPetByType(String type) {
+	public List<Pethouse> getPetByType(String type) {
 		String query = "SELECT p FROM PetHouse p WHERE p.type like :type";
-		List<PetHouse> petType = em.createQuery(query, PetHouse.class).setParameter("type", type).getResultList();
+		List<Pethouse> petType = em.createQuery(query, Pethouse.class).setParameter("type", type).getResultList();
 
 		em.close();
 		return petType;
@@ -68,18 +68,17 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 
 	// Get the complete list of pets
 	@Override
-	public List<PetHouse> getAllPets() {
-
-		String query = "SELECT p FROM PetHouse p";
-		List<PetHouse> pets = em.createQuery(query, PetHouse.class).getResultList();
+	public List<Pethouse> getAllPets() {
+		String query = "SELECT p FROM Pethouse p";
+		List<Pethouse> pets = em.createQuery(query, Pethouse.class).getResultList();
 		em.close();
 		return pets;
 	}
 
 	// Get pet by id
 	@Override
-	public PetHouse findById(int id) {
-		return em.find(PetHouse.class, id);
+	public Pethouse findById(int id) {
+		return em.find(Pethouse.class, id);
 	}
 
 }

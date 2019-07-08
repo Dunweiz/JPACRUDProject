@@ -12,13 +12,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.skilldistillery.pethouse.entities.PetHouse;
+import com.skilldistillery.pethouse.entities.Pethouse;
 
 class PetTests {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private PetHouse pet;
+	private Pethouse pet;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,7 +33,7 @@ class PetTests {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		pet = em.find(PetHouse.class, 1);
+		pet = em.find(Pethouse.class, 1);
 	}
 
 	@AfterEach
