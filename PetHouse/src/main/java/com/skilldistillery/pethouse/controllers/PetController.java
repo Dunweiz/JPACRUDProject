@@ -1,8 +1,5 @@
 package com.skilldistillery.pethouse.controllers;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +21,14 @@ public class PetController {
 	@RequestMapping(path = "/")
 	public String index(Model model) {
 		List<PetHouse> pets = dao.getAllPets();
-		model.addAttribute("pet", pets);
-		return "WEB-INF/index.html";
+		model.addAttribute("pets", pets);
+		return "WEB-INF/index.jsp";
 	}
 	
-	@RequestMapping(path="getPet.do", method = RequestMethod.GET)
+	@RequestMapping(path="getPet.do")
 	public String showPets(@RequestParam("pid") Integer pid, Model model) {
 		PetHouse pet = dao.findById(pid);
-		model.addAttribute("pid", pet);
+		model.addAttribute("pet", pet);
 		return "WEB-INF/pet/show.jsp";
 	}
 	
@@ -45,8 +42,8 @@ public class PetController {
 	@RequestMapping(path="delete.do", method = RequestMethod.POST)
 	public String delete(@RequestParam("PID")int petId, Model model) throws Exception {
 		boolean deleted = dao.destroy(petId);
-		model.addAttribute("delete", deleted);
-		return "delete";
+		model.addAttribute("pet", deleted);
+		return "pet";
 	}
 	
 	@RequestMapping(path="updatePage.do", method = RequestMethod.POST)

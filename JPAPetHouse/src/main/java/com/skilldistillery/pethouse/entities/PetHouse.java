@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="pethouse")
 public class PetHouse {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id

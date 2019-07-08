@@ -9,11 +9,11 @@
 </head>
 <body>
 	<c:choose>
-		<c:when test="${! empty pethouse }">
-			<h1>${pethouse.name}</h1>
+		<c:when test="${! empty pet }">
+			<h1>${pet.name}</h1>
 			<ul>
-				<li>age: ${pethouse.age}</li>
-				<li>type: ${pethouse.type}</li>
+				<li>age: ${pet.age}</li>
+				<li>type: ${pet.type}</li>
 			</ul>
 			<form action="updatePage.do" method="POST">
 				<input type="hidden" name="PID" value=${pethouse.id}> <input
