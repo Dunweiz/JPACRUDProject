@@ -10,20 +10,23 @@
 <body>
 	<h3>Edit Pet</h3>
 
-	<h1>${petHouse.name}</h1>
+	<h1>${pet.name}</h1>
 	<ul>
-		<li>Type: ${petHouse.type}</li>
-		<li>Age: ${petHouse.age}</li>
+		<li>Type: ${pet.type}</li>
+		<li>Age: ${pet.age}</li>
 	</ul>
 	<br>
 	<form action="update.do" method="POST">
 		<label for="name">Name:</label><input type="text" name="name"
-			value="${petHouse.name}"> <label for="type">Type:</label><input
-			type="text" name="type" value="${petHouse.type}"> <label
+			value="${pet.name}"> <label for="type">Type:</label><input
+			type="text" name="type" value="${pet.type}"> <label
 			for="age">Age:</label><input type="number" name="age"
-			value="${petHouse.age}"> <input type="hidden" name="id"
-			value=${petHouse.id}> <input type="submit" value="Update">
+			value="${pet.age}"> 
+			<input type="hidden" name="PID" value="${pet.id}">
+			 <input type="submit" value="Update">
 	</form>
-	<a href="index.jsp">Go Home</a>
+	<form action="home.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
 </body>
 </html>

@@ -33,30 +33,42 @@ public class PetController {
 	}
 	
 	@RequestMapping(path="create.do", method = RequestMethod.POST)
-	public String createPet(@RequestParam("PID") Pethouse pet, Model model) {
+	public String createPet(Pethouse pet, Model model) {
 		Pethouse newPet = dao.create(pet);
 		model.addAttribute("pet", newPet);
-		return "WEB-INF/createnewpet.jsp";
+		return "WEB-INF/pet/show.jsp";
 	}
 	
 	@RequestMapping(path="delete.do", method = RequestMethod.POST)
 	public String delete(@RequestParam("PID")int petId, Model model) throws Exception {
+		System.err.println("*****************" + petId);
 		boolean deleted = dao.destroy(petId);
 		model.addAttribute("pet", deleted);
-		return "pet";
+		return "WEB-INF/pet/deletepet.jsp";
 	}
 	
-	@RequestMapping(path="updatePage.do", method = RequestMethod.POST)
+	@RequestMapping(path="updatePage.do")
 	public String updatePage(@RequestParam("PID") int pId, Model model) {
 		Pethouse pet = dao.findById(pId);
 		model.addAttribute("pet", pet);
-		return "WEB-INF/pet/updatepet.jsp";
+		return "WEB-INF/pet/updatePage.jsp";
 	}
 	
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
 	public String updatePet(@RequestParam("PID")int pID, Pethouse pet, Model model) {
 		Pethouse newPet = dao.update(pID, pet);
 		model.addAttribute("pet", newPet);
-		return"WEB-INF/pet/update.jsp";
+		return"WEB-INF/pet/show.jsp";
 	}
+	@RequestMapping(path="home.do")
+	public String home(Model model) {
+		List<Pethouse> pets = dao.getAllPets();
+		model.addAttribute("pets", pets);
+		return "WEB-INF/index.jsp";
+	}
+	@RequestMapping(path="createPage.do")
+	public String redirect() {
+		return"WEB-INF/createnewpet.jsp";
+	}
+	
 }

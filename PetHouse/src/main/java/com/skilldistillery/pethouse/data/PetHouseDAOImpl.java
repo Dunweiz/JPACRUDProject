@@ -20,10 +20,7 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	// Create a new pet
 	@Override
 	public Pethouse create(Pethouse pet) {
-		em.getTransaction().begin();
 		em.persist(pet);
-		em.flush();
-		em.getTransaction().commit();
 		em.close();
 		return pet;
 	}
@@ -31,13 +28,11 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	// Update an existing pet
 	@Override
 	public Pethouse update(int id, Pethouse pet) {
-		em.getTransaction().begin();
 		Pethouse managed = em.find(Pethouse.class, id);
 		managed.setName(pet.getName());
 		managed.setAge(pet.getAge());
 		managed.setType(pet.getType());
 
-		em.getTransaction().commit();
 		em.close();
 		return managed;
 	}
@@ -45,15 +40,8 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	// Delete an existing pet
 	@Override
 	public boolean destroy(int id) {
-		Pethouse pet = em.find(Pethouse.class, id);
-		em.getTransaction().begin();
-
-		em.remove(pet);
-
-		em.getTransaction().commit();
-		em.close();
+		em.remove(em.find(Pethouse.class, id));
 		return true;
-
 	}
 
 	// Get all the pets with a certain type

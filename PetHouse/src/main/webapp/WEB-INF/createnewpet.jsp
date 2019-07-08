@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="create.do" method="POST">
-	<label for="type">Type:</label><iput type="text" name="type">
+	<label for="type">Type:</label><input type="text" name="type">
 	<br> 
 	<label for="name">Name:</label> <input type="text" name="name">
 	<br>
@@ -16,6 +16,8 @@
 	name="age">
 	<input type="submit" value="Add">
 </form>
-
+	<form action="home.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
 </body>
 </html>

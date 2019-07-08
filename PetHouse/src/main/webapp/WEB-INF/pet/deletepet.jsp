@@ -9,12 +9,14 @@
 </head>
 <body>
 <c:choose>
-		<c:when test="${empty pet }">
+		<c:when test="${empty pet}">
 		<h2>Pet Deleted</h2>
 		</c:when>
 		<c:otherwise>Pet Cannot Be Deleted</c:otherwise>
 	</c:choose>
 	<br>
-	 <a href="index.jsp">Go Home</a>
+	<form action="home.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
 </body>
-</html>
+</html>	

@@ -15,21 +15,24 @@
 				<li>age: ${pet.age}</li>
 				<li>type: ${pet.type}</li>
 			</ul>
-			<form action="updatePage.do" method="POST">
-				<input type="hidden" name="PID" value=${pethouse.id}> <input
-					type="submit" value="Edit PetHouse">Edit Pet Information<br>
+			<hr>
+			<form action="updatePage.do" method="GET">
+				<input type="hidden" name="PID" value=${pet.id}> <input
+					type="submit" value="Edit Pet">Edit Pet Information<br>
 			</form>
-			<form action="delete.do" method="POST">
-				<input type="hidden" name="PID" value=${pethouse.id}> <input
-					type="submit" value="Delete PetHouse">Delete Pet <br>
+			<hr>
+			<form action="delete.do" method="POST"> <h1></h1>
+				<input type="hidden" name="PID" value=${pet.id}> <input
+					type="submit" value="Delete Pet">Delete Pet <br>
 			</form>
 		</c:when>
 		<c:otherwise>
 			<p>No Pets Found</p>
 		</c:otherwise>
 	</c:choose>
-
-
-	<a href="index.jsp">Go Home</a>
+			<hr>
+	<form action="home.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
 </body>
 </html>

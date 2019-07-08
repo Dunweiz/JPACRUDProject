@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 
-
-   <a href="index.jsp">Go Home</a>
+  <form action="home.do" method="GET">
+		<input type="submit" value="Home" />
+	</form>
 </body>
 </html>

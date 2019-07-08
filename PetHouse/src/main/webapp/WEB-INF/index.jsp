@@ -17,8 +17,8 @@
 			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type})</a></li>
 		</c:forEach>
 	<hr>
-	<form>
-	
-	</form>	
+	<form action="createPage.do" method="GET">
+		Create New Pet: <input type="Submit" Value="Add New pet">
+	</form>
 </body>
 </html>

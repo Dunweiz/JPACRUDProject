@@ -44,16 +44,16 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `petdb`;
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (1, 'dog', 2, 'sprinkles');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (2, 'cat', 1, 'milk');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (3, 'cat', 3, 'garfield');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (4, 'dog', 1, 'max');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (5, 'bird', 2, 'jet');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (6, 'fish', 1, 'blue');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (7, 'hamster', 1, 'sqeek');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (8, 'fish', 1, 'trapper');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (9, 'cat', 3, 'fluffer');
-INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (10, 'dog', 5, 'sparkle');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (1, 'dog', 2, 'Sprinkle');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (2, 'cat', 1, 'Milk');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (3, 'cat', 3, 'Paws');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (4, 'dog', 1, 'Scooter');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (5, 'bird', 2, 'Cheek');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (6, 'fish', 1, 'Blue');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (7, 'hamster', 1, 'Squeek');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (8, 'fish', 1, 'Blub');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (9, 'cat', 3, 'Scratcher');
+INSERT INTO `pethouse` (`id`, `type`, `age`, `name`) VALUES (10, 'dog', 5, 'Sniffer');
 
 COMMIT;
 
