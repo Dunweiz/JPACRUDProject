@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:choose>
-		<c:when test="${empty pet}">
+		<c:when test="${!empty pet}">
 		<h2>Pet Deleted</h2>
 		</c:when>
 		<c:otherwise>Pet Cannot Be Deleted</c:otherwise>

@@ -7,6 +7,7 @@
 <title>Add Pet</title>
 </head>
 <body>
+<h1>Add Pet Information</h1>
 <form action="create.do" method="POST">
 	<label for="type">Type:</label><input type="text" name="type">
 	<br> 
@@ -16,6 +17,7 @@
 	name="age">
 	<input type="submit" value="Add">
 </form>
+<hr>
 	<form action="home.do" method="GET">
 		<input type="submit" value="Home" />
 	</form>
