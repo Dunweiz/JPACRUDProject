@@ -1,6 +1,6 @@
 ## JPACRUDProject
 
-### Week  Homework
+### Week 9 Homework
 
 This homework assignment was to create a full stack application using a database made through MySQLWorkbench.
 This program is to allow a pet adoption center to inform people which animals are up for adoption.
