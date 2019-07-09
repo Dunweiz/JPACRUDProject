@@ -4,7 +4,7 @@
 
 This homework assignment was to create a full stack application using a database made through MySQLWorkbench.
 This program is to allow a pet adoption center to inform people which animals are up for adoption.
-In this site you can search up pets, modify their information, delete them from the system, and create a new pet to register.
+In this site you can search up pets, modify their information, delete them from the system, and create a new pet to registration.
 
 ### Technologies used
 
