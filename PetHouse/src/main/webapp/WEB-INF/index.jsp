@@ -9,7 +9,7 @@
 </head>
 <body><h1>Pet House</h1>
 <form action="getPet.do" method="GET">
-		Pet ID: <input type="text" name="pid" /> <input type="submit"
+		Pet ID: <input type="number" name="pid" /> <input type="submit"
 			value="Show Pets" />
 	</form>
 	<hr>
