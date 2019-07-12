@@ -8,7 +8,10 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 
-		<class>com.skilldistillery.jpapethouse.entities.PetHouse</class>
+		<class>com.skilldistillery.jpapethouse.entities.Pethouse</class>
+		<class>com.skilldistillery.jpapethouse.entities.Owner</class>
+		<class>com.skilldistillery.jpapethouse.entities.Address</class>
+		<class>com.skilldistillery.jpapethouse.entities.Pettype</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"

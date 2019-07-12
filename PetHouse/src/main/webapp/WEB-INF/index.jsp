@@ -14,7 +14,7 @@
 	</form>
 	<hr>
 		<c:forEach var="p" items="${pets}">
-			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type})</a></li>
+			<li><a href="getPet.do?pid=${p.id}">${p.name}(${p.type.species})</a></li>
 		</c:forEach>
 	<hr>
 	<form action="createPage.do" method="GET">

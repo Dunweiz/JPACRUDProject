@@ -12,8 +12,19 @@
 		<c:when test="${! empty pet }">
 			<h1>${pet.name}</h1>
 			<ul>
-				<li>age: ${pet.age}</li>
-				<li>type: ${pet.type}</li>
+				<li>Age: ${pet.age}</li>
+				<li>Type: ${pet.type.species}</li>
+			</ul>
+			<hr>
+			<h2> Pet Owners Information</h2>
+			<ul>	
+				<li>First Name: ${pet.owner.firstName }</li>
+				<li>Last Name: ${pet.owner.lastName }</li>
+				<li>Phone Number: ${pet.owner.phone }</li>
+				<li>Address: ${pet.owner.address.address }</li>
+				<li>City: ${pet.owner.address.city }</li>
+				<li>State: ${pet.owner.address.state }</li>
+				<li>Zip-Code: ${pet.owner.address.zip}</li>
 			</ul>
 			<hr>
 			<form action="updatePage.do" method="GET">
