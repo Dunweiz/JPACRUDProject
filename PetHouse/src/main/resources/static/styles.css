@@ -1,0 +1,17 @@
+@charset "UTF-8";
+li {
+	background: url(https://images-na.ssl-images-amazon.com/images/I/71BEBk0uEOL._SX425_.jpg) no-repeat 10px;
+    padding-left: 2.5em;
+    background-size: 20px;
+    list-style: none;
+}
+
+.header {
+	background-color: RGB(197, 172, 151); 
+	padding: 10px;
+}
+	
+body {
+	padding: 0;
+	margin: 0;
+}	

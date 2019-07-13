@@ -34,6 +34,7 @@ public class Owner {
 	
 	@OneToMany(mappedBy="owner")
 	private List<Pethouse> pets;
+	
 
 	public void addPet(Pethouse pet) {
 		if(pets == null) { pets = new ArrayList<>();}

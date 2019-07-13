@@ -25,7 +25,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	public Pethouse create(Pethouse pet) {
 		Owner owner = new Owner();
 		Address addr = new Address();
-		
 		owner.setFirstName(pet.getOwner().getFirstName());
 		owner.setLastName(pet.getOwner().getLastName());
 		owner.setPhone(pet.getOwner().getPhone());
@@ -41,7 +40,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		pet.setOwner(owner);
 		em.persist(pet);
 		em.flush();
-		em.close();
 		return pet;
 	}
 
@@ -69,7 +67,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		managed.setType(type);
 		managed.setOwner(owner);
 		
-		em.close();
 		return managed;
 	}
 	
@@ -84,7 +81,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		managed.setLastName(owner.getLastName());
 		managed.setPhone(owner.getPhone());
 		
-		em.close();
 		return managed;
 		
 	}
@@ -97,7 +93,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		addr.setCity(address.getCity());
 		addr.setState(address.getState());
 		addr.setZip(address.getZip());
-		em.close();
 		return addr;
 	}
 
@@ -114,7 +109,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 		String query = "SELECT p FROM PetHouse p WHERE p.type.id = :type";
 		List<Pethouse> petType = em.createQuery(query, Pethouse.class).setParameter("type", type).getResultList();
 
-		em.close();
 		return petType;
 	}
 
@@ -123,7 +117,6 @@ public class PetHouseDAOImpl implements PetHouseDAO {
 	public List<Pethouse> getAllPets() {
 		String query = "SELECT p FROM Pethouse p";
 		List<Pethouse> pets = em.createQuery(query, Pethouse.class).getResultList();
-		em.close();
 		return pets;
 	}
 

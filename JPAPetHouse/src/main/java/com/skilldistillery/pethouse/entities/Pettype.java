@@ -23,6 +23,7 @@ public class Pettype {
 	@OneToMany(mappedBy="type")
 	private List<Pethouse> pets;
 
+	
 	public void addPet(Pethouse pet) {
 		if(pets == null) { pets = new ArrayList<>();}
 		if(!pets.contains(pet)) {
