@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="UTF-8">
 <title>update page</title>
 </head>
-<body>
+<body background="https://campfire.org/wp-content/uploads/2016/08/e6bffcd2e194a6b1b8317b8f5126f7a409e150d6_Home-slider-2_v2.jpg">
+	<div class="header">
 	<h2>Edit Pet Information</h2>
+	</div>
 	<hr>
 	<h1>Pet Name: ${pet.name}</h1>
 	<ul>

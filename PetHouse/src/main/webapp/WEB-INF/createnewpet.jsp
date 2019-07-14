@@ -3,11 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="UTF-8">
 <title>Add Pet</title>
 </head>
-<body>
+<body background="https://avada.theme-fusion.com/veterinarian/wp-content/uploads/sites/80/2016/11/pets_big.png">
+<div class="header">
 <h1>Add Pet Information</h1>
+</div>
 <form action="create.do" method="POST">
 	<label for="type.id">Type:</label>
 		<br>

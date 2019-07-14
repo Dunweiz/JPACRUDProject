@@ -4,17 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="UTF-8">
 <title>Show Pet</title>
 </head>
-<body>
+<body background="https://www.petsadvice.org/wp-content/uploads/2018/08/An-All-New-World-For-Pets-Online.jpg">
 	<c:choose>
 		<c:when test="${! empty pet }">
+<div class="header">
 			<h1>${pet.name}</h1>
 			<ul>
 				<li>Age: ${pet.age}</li>
 				<li>Type: ${pet.type.species}</li>
 			</ul>
+			</div>
 			<hr>
 			<h2> Pet Owners Information</h2>
 			<ul>	
