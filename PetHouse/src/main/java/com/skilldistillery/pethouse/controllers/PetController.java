@@ -56,6 +56,7 @@ public class PetController {
 	
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
 	public String updatePet(@RequestParam("PID")int pID, Pethouse pet, Model model) {
+		System.out.println(pet);
 		Pethouse newPet = dao.update(pID, pet);
 		model.addAttribute("pet", newPet);
 		return"WEB-INF/pet/show.jsp";

@@ -10,11 +10,11 @@ public class PetHouseDAOTest {
 		
 		Pethouse pet = new Pethouse();
 		
-		pet.setAge(6);
-		pet.setName("sprinkles");
-		pet.setType("fish");
-		System.out.println("Before db Stuff: " + pet);
-		System.out.println(dao.create(pet));
+//		pet.setAge(6);
+//		pet.setName("sprinkles");
+//		pet.setType("fish");
+//		System.out.println("Before db Stuff: " + pet);
+//		System.out.println(dao.create(pet));
 		
 //		PetHouse newPet = new PetHouse();
 //		newPet.setName("Spots");

@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body background="https://cdn.pixabay.com/photo/2015/11/29/19/23/bulldog-1069212_960_720.jpg">
 <c:choose>
 		<c:when test="${!empty pet}">
 		<h2>Pet Deleted</h2>
