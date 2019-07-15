@@ -34,7 +34,6 @@
 				<input type="hidden" name="PID" value=${pet.id}> <input
 					type="submit" value="Edit Pet">Edit Pet Information<br>
 			</form>
-			<hr>
 			<form action="delete.do" method="POST"> <h1></h1>
 				<input type="hidden" name="PID" value=${pet.id}> <input
 					type="submit" value="Delete Pet">Delete Pet <br>
@@ -44,7 +43,6 @@
 			<p>No Pets Found</p>
 		</c:otherwise>
 	</c:choose>
-			<hr>
 	<form action="home.do" method="GET">
 		<input type="submit" value="Home" />
 	</form>
